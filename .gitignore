@@ -1,0 +1,10 @@
+node_modules/
+.taste-skill/
+preview/
+dist/
+*.log
+.DS_Store
+Thumbs.db
+.env
+.env.*
+*.bak-*

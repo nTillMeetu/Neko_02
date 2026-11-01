@@ -1,0 +1,50 @@
+{
+  "name": "dsh-usage-overview",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "In-app usage panel for DeepSeek Harness: balance, a daily-spend calendar and monthly totals across every API key.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nTillMeetu/Neko_02.git"
+  },
+  "homepage": "https://github.com/nTillMeetu/Neko_02",
+  "bugs": {
+    "url": "https://github.com/nTillMeetu/Neko_02/issues"
+  },
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "usage",
+    "balance",
+    "dashboard"
+  ],
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": {
+      "default": "./lib/client.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "check": "node --check lib/index.js && node --check lib/client.js",
+    "panel:install": "node install.mjs",
+    "panel:uninstall": "node install.mjs --uninstall"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": []
+    }
+  },
+  "meta": {
+    "title": "Usage Overview",
+    "description": "Replaces the account card's 查询用量 embedded Platform page with an in-app panel: balance, a calendar heat map of daily spend and month-by-month totals for every API key."
+  }
+}
