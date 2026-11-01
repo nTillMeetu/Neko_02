@@ -21,6 +21,9 @@
     "balance",
     "dashboard"
   ],
+  "engines": {
+    "node": ">=20"
+  },
   "main": "lib/index.js",
   "exports": {
     ".": "./lib/index.js",

@@ -1,5 +1,8 @@
 # DeepSeek Harness · Usage Overview
 
+[![check](https://github.com/nTillMeetu/Neko_02/actions/workflows/check.yml/badge.svg)](https://github.com/nTillMeetu/Neko_02/actions/workflows/check.yml)
+[![license: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 An in-app panel for **DeepSeek Harness (DSH) desktop** that replaces the embedded
 `platform.deepseek.com/usage` page behind **设置 → 账号与余额 → 查询用量** with a
 readable overview of the whole account:
@@ -14,14 +17,22 @@ readable overview of the whole account:
 > **Not an official DeepSeek product.** It is a community plugin that lives inside
 > the DSH desktop profile and uses DSH's extension points.
 
-![Usage overview panel](docs/screenshot.png)
+**Dark theme**
+
+![Usage overview panel — dark theme](docs/screenshot.png)
+
+**Light theme**
+
+![Usage overview panel — light theme](docs/screenshot-light.png)
+
+<sub>Screenshots use synthetic data.</sub>
 
 ## Requirements
 
 | | |
 |---|---|
 | App | DeepSeek Harness **desktop** (tested with `0.2.1-rc.5`, Windows x64) |
-| Node.js | 22+ for the installer (DSH ships its own runtime as a fallback) |
+| Node.js | 20+ for the installer (DSH ships its own runtime as a fallback) |
 | Account | A DSH account that is signed in (the panel reads the existing session) |
 | OS | Windows currently tested; the installer uses only Node APIs, other platforms untested |
 
@@ -110,6 +121,13 @@ node install.mjs --uninstall
 
 Then restart DSH. If you installed manually, remove the dependency and the bundle
 entry and run `pnpm install` again.
+
+## Documentation
+
+- [CHANGELOG.md](CHANGELOG.md) — release history
+- [CONTRIBUTING.md](CONTRIBUTING.md) — development loop, guidelines
+- [SECURITY.md](SECURITY.md) — how credentials are handled and how to report issues
+- [docs/DESIGN.md](docs/DESIGN.md) — the design iterations behind the panel
 
 ## License
 
