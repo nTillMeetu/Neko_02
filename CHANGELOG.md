@@ -4,6 +4,17 @@ All notable changes to this project are documented here.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [1.0.1] - 2026-11-01
+
+### Fixed
+
+- Concurrent summary requests could add the same 31-day history windows more
+  than once, inflating the month table and lifetime totals (2x-3x the real
+  values). History accumulation is now single-flight, so overlapping requests
+  share one backfill.
+- Added `test/aggregation-race.test.mjs`: a mocked Platform API regression test
+  that fires three concurrent summaries and checks the totals exactly once.
+
 ## [1.0.0] - 2026-11-01
 
 ### Added

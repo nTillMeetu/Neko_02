@@ -17,3 +17,5 @@ jobs:
           node --check lib/index.js
           node --check lib/client.js
           node --check install.mjs
+      - name: Aggregation regression test
+        run: node test/aggregation-race.test.mjs

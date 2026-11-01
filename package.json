@@ -1,6 +1,6 @@
 {
   "name": "dsh-usage-overview",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "type": "module",
   "description": "In-app usage panel for DeepSeek Harness: balance, a daily-spend calendar and monthly totals across every API key.",
@@ -35,7 +35,8 @@
   "scripts": {
     "check": "node --check lib/index.js && node --check lib/client.js",
     "panel:install": "node install.mjs",
-    "panel:uninstall": "node install.mjs --uninstall"
+    "panel:uninstall": "node install.mjs --uninstall",
+    "test": "node test/aggregation-race.test.mjs"
   },
   "dsh": {
     "bundle": {
