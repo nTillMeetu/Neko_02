@@ -122,6 +122,45 @@ node install.mjs --uninstall
 Then restart DSH. If you installed manually, remove the dependency and the bundle
 entry and run `pnpm install` again.
 
+## Troubleshooting
+
+**`git clone` fails with `Failed to connect to github.com:443`**
+
+Some networks block GitHub's HTTPS edge. Clone over SSH instead (GitHub serves
+SSH on port 443): add `~/.ssh/config` entries
+
+```
+Host github.com
+  HostName ssh.github.com
+  Port 443
+  User git
+```
+
+and use `git clone git@github.com:nTillMeetu/Neko_02.git`. After cloning, the
+installer works offline.
+
+**Panel does not appear after restarting DSH**
+
+Check that `dsh.profile.bundles` in the profile's `package.json` contains
+`dsh-usage-overview`, then run `pnpm install` from the profile directory again.
+The plugin needs a DSH build that provides the `shell.overlay` slot.
+
+**Monthly totals are missing**
+
+The Host half needs a DSH restart to register its route (already part of the
+install step). If only the client was reloaded, the panel falls back to the
+current month and the month picker is disabled.
+
+**Balance or usage returns an error**
+
+The panel uses the signed-in account's session; sign in again in DSH, then
+reopen the panel and press 刷新.
+
+**The panel disappeared after moving the repository**
+
+The profile links to the repository path. Move the folder, then run
+`node install.mjs` again to refresh the link.
+
 ## Documentation
 
 - [CHANGELOG.md](CHANGELOG.md) — release history
